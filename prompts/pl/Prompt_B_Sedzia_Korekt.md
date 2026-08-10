@@ -1,6 +1,8 @@
 # AI Interaction Pattern Assessment (AIPA) — wariant „Zdarzenia korekcyjne"
 ## v0.4 — Prompt B: SĘDZIA KOREKT (tryb rozdzielony) — Instrument AIPA-E v0.2
 
+*Autor: Dawid Kulik, B. Eng — [github.com/akirapl](https://github.com/akirapl) — akira3179082@gmail.com*
+
 ---
 
 ## Rola i kontekst tego promptu

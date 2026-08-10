@@ -1,6 +1,8 @@
 # AI Interaction Pattern Assessment (AIPA) — "Question Complexity" variant
 ## v0.4 — Prompt A: COMPLEXITY JUDGE (split mode)
 
+*Author: Dawid Kulik, B. Eng — [github.com/akirapl](https://github.com/akirapl) — akira3179082@gmail.com*
+
 ---
 
 ## Role and context of this prompt

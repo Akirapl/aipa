@@ -72,6 +72,13 @@ Die Richter sind Prompts, kein Code. Führe sie nacheinander aus, jeweils in ein
 
 Führe alle vier Prompts einer Bewertungsserie in derselben Sprachspur aus (alle aus `/prompts/de/`, alle aus `/prompts/en/` oder alle aus `/prompts/pl/`). Die drei Spuren sind originalgetreue Übersetzungen derselben Methodik, aber der maschinenlesbare Reflect-Block verwendet je Sprache unterschiedliche Feldnamen, und Prompt D erwartet die Feldnamen seiner eigenen Spur.
 
+## Autor
+
+**Dawid Kulik, B. Eng** — unabhängiger Entwickler mit ingenieurwissenschaftlichem Hintergrund, der AIPA gebaut hat, um aus der Frage „ist dieses Gespräch eigentlich gut gelaufen?" etwas Messbares zu machen statt eines Bauchgefühls.
+
+- GitHub: [@akirapl](https://github.com/akirapl)
+- Kontakt: akira3179082@gmail.com
+
 ## Lizenz
 
 MIT.
