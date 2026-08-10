@@ -1,6 +1,8 @@
 # AI Interaction Pattern Assessment (AIPA) — wariant „Złożoność pytań"
 ## v0.4 — Prompt A: SĘDZIA ZŁOŻONOŚCI (tryb rozdzielony)
 
+*Autor: Dawid Kulik, B. Eng — [github.com/akirapl](https://github.com/akirapl) — akira3179082@gmail.com*
+
 ---
 
 ## Rola i kontekst tego promptu

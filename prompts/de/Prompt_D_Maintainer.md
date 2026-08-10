@@ -1,6 +1,8 @@
 # AI Interaction Pattern Assessment (AIPA)
 ## v0.4 — Prompt D: MAINTAINER (Split-Modus)
 
+*Autor: Dawid Kulik, B. Eng — [github.com/akirapl](https://github.com/akirapl) — akira3179082@gmail.com*
+
 ---
 
 ## Rolle und Kontext dieses Prompts

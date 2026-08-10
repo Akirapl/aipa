@@ -1,6 +1,8 @@
 # AI Interaction Pattern Assessment (AIPA) — "Correction Events" variant
 ## v0.4 — Prompt B: CORRECTION JUDGE (split mode) — Instrument AIPA-E v0.2
 
+*Author: Dawid Kulik, B. Eng — [github.com/akirapl](https://github.com/akirapl) — akira3179082@gmail.com*
+
 ---
 
 ## Role and context of this prompt

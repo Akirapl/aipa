@@ -72,6 +72,13 @@ Sędziowie to prompty, nie kod. Uruchamiaj je pojedynczo, w czystej sesji bez za
 
 Uruchamiaj wszystkie cztery prompty jednej serii oceny w **tym samym torze językowym** (wszystkie z `/prompts/pl/`, wszystkie z `/prompts/en/` lub wszystkie z `/prompts/de/`). Trzy tory to wierne tłumaczenia tej samej metodyki, ale czytelny maszynowo blok Reflect używa innych nazw pól w każdym języku, a Prompt D oczekuje nazw pól właściwych dla swojego toru.
 
+## Autor
+
+**Dawid Kulik, B. Eng** — niezależny twórca z wykształceniem inżynierskim, który zbudował AIPA, by zamienić pytanie „czy ta rozmowa faktycznie poszła dobrze?" w coś mierzalnego zamiast przeczucia.
+
+- GitHub: [@akirapl](https://github.com/akirapl)
+- Kontakt: akira3179082@gmail.com
+
 ## Licencja
 
 MIT.

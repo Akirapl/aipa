@@ -72,6 +72,13 @@ The judges are prompts, not code. Run them one at a time, in a clean session wit
 
 Run all four prompts of one assessment series in the **same language track** (all from `/prompts/en/`, all from `/prompts/de/`, or all from `/prompts/pl/`). The three tracks are faithful translations of the same methodology, but the machine-readable Reflect block uses different field names per language, and Prompt D expects the field names of its own track.
 
+## Author
+
+**Dawid Kulik, B. Eng** — independent developer with an engineering background, building AIPA to turn "did this conversation actually go well?" into something measurable instead of a gut feeling.
+
+- GitHub: [@akirapl](https://github.com/akirapl)
+- Contact: akira3179082@gmail.com
+
 ## License
 
 MIT.

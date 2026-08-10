@@ -1,6 +1,8 @@
 # AI Interaction Pattern Assessment (AIPA) — Variante „Korrektur-Ereignisse"
 ## v0.4 — Prompt B: KORREKTUR-RICHTER (Split-Modus) — Instrument AIPA-E v0.2
 
+*Autor: Dawid Kulik, B. Eng — [github.com/akirapl](https://github.com/akirapl) — akira3179082@gmail.com*
+
 ---
 
 ## Rolle und Kontext dieses Prompts
