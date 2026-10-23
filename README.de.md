@@ -21,10 +21,10 @@ Beide laufen durch vier isolierte Richter-Prompts, jeder in einer eigenen frisch
 
 | Prompt | Rolle | Sieht |
 |---|---|---|
-| A — Komplexitäts-Richter | Klassifiziert K1–K5 | Nur das Transkript, blind |
-| B — Korrektur-Richter | Klassifiziert E1–E5 | Nur das Transkript, blind, unabhängig von A |
-| C — Komparator | Vergleicht Berichte über Durchläufe und Instrumente hinweg | Nur gesperrte Richter-Berichte — nie Reflect-Daten |
-| D — Maintainer | Schlägt die nächste Version vor | Nur angesammelte Reflect-Blöcke — nie die eigentlichen Befunde |
+| A — Komplexitäts-Richter | Klassifiziert K1–K5 | Die Chat-Historie des Kontos, per Suche - ohne Anhänge, blind |
+| B — Korrektur-Richter | Klassifiziert E1–E5 | Die Chat-Historie des Kontos, per Suche - ohne Anhänge, blind, unabhängig von A |
+| C — Komparator | Vergleicht Berichte über Durchläufe und Instrumente hinweg | Nur gesperrte Richter-Berichte - deren Reflect-Blöcke werden ignoriert |
+| D — Maintainer | Schlägt die nächste Version vor | Nur angesammelte Reflect-Blöcke (optional die aktuellen Prompt-Texte) - nie die eigentlichen Befunde |
 
 Innerhalb jedes Richters laufen die Phasen strikt sequentiell und sperren, bevor die nächste beginnt: eine Kontaminationserklärung, Evidenzerhebung (eine Mindestabdeckung an Domänen ist erzwungen, nicht optional), Klassifikation (danach eingefroren), Validierung und Selbstkritik, sowie ein maschinenlesbarer Reflect-Block, der den Maintainer speist.
 
@@ -54,7 +54,7 @@ Aktiv, aktuell **v0.4**. AIPA-K und AIPA-E versionieren unabhängig voneinander.
 /prompts/en/   Prompts A–D, Englisch (kanonisch)
 /prompts/de/   Prompts A–D, Deutsch (Original)
 /prompts/pl/   Prompts A–D, Polnisch
-/examples/     Anonymisierte Beispiel-Richterberichte und ein vollständiger Durchlauf
+/examples/     Reserviert für anonymisierte Beispiel-Durchläufe (noch keine veröffentlicht)
 README.md      Englische Fassung
 README.de.md   Diese Datei (Deutsch)
 README.pl.md   Polnisch
@@ -63,11 +63,11 @@ LICENSE
 
 ## Verwendung
 
-Die Richter sind Prompts, kein Code. Führe sie nacheinander aus, jeweils in einer sauberen Sitzung ohne angehängten Vorkontext:
+Die Richter sind Prompts, kein Code. Führe sie nacheinander aus, jeweils in einem frischen Chat ohne angehängte Dateien:
 
-1. Prompt A auf ein Transkript anwenden → gesperrten Bericht speichern.
-2. Prompt B auf *dasselbe* Transkript anwenden, separat → gesperrten Bericht speichern.
-3. Beide gesperrten Berichte — niemals das Rohtranskript — in Prompt C für den instrumentübergreifenden Vergleich einspeisen.
+1. Prompt A in einem frischen Chat auf der Plattform ausführen, deren Gespräche bewertet werden sollen. Der Richter durchsucht die Chat-Historie dieses Kontos selbst; ist dort keine Suche in der Chat-Historie verfügbar, bricht er bewusst ab - ein eingefügtes Transkript ist kein Ersatz. Gesperrten Bericht speichern.
+2. Prompt B auf dieselbe Weise in einem separaten frischen Chat ausführen → gesperrten Bericht speichern.
+3. Beide gesperrten Berichte - niemals Rohgespräche - in Prompt C für den instrumentübergreifenden Vergleich einspeisen.
 4. Sobald sich Reflect-Blöcke über mehrere Durchläufe angesammelt haben, ausschließlich diese in Prompt D für die Änderungsliste der nächsten Version einspeisen.
 
 Führe alle vier Prompts einer Bewertungsserie in derselben Sprachspur aus (alle aus `/prompts/de/`, alle aus `/prompts/en/` oder alle aus `/prompts/pl/`). Die drei Spuren sind originalgetreue Übersetzungen derselben Methodik, aber der maschinenlesbare Reflect-Block verwendet je Sprache unterschiedliche Feldnamen, und Prompt D erwartet die Feldnamen seiner eigenen Spur.
