@@ -21,10 +21,10 @@ Both run through four isolated judge prompts, each executed in its own fresh ses
 
 | Prompt | Role | Sees |
 |---|---|---|
-| A — Complexity Judge | Classifies K1–K5 | Only the transcript, blind |
-| B — Correction Judge | Classifies E1–E5 | Only the transcript, blind, independent of A |
-| C — Comparator | Compares reports across runs and instruments | Locked judge reports only — never Reflect data |
-| D — Maintainer | Proposes the next version | Only accumulated Reflect blocks — never the actual findings |
+| A — Complexity Judge | Classifies K1–K5 | The account's chat history, via search - no attachments, blind |
+| B — Correction Judge | Classifies E1–E5 | The account's chat history, via search - no attachments, blind, independent of A |
+| C — Comparator | Compares reports across runs and instruments | Locked judge reports only - their Reflect blocks are ignored |
+| D — Maintainer | Proposes the next version | Only accumulated Reflect blocks (optionally the current prompt texts) - never the actual findings |
 
 Inside each judge, phases run strictly in order and lock before the next begins: a contamination declaration, evidence gathering (minimum domain coverage is enforced, not optional), classification (then frozen), validation and self-critique, and a machine-readable Reflect block that feeds the Maintainer.
 
@@ -54,7 +54,7 @@ Active, currently **v0.4**. AIPA-K and AIPA-E version independently. Several v0.
 /prompts/en/   Prompts A–D, English (canonical)
 /prompts/de/   Prompts A–D, German (original)
 /prompts/pl/   Prompts A–D, Polish
-/examples/     Anonymized sample judge reports and a full run
+/examples/     Reserved for anonymized sample runs (none published yet)
 README.md      This file (English)
 README.de.md   German
 README.pl.md   Polish
@@ -63,11 +63,11 @@ LICENSE
 
 ## Using it
 
-The judges are prompts, not code. Run them one at a time, in a clean session with no prior context attached:
+The judges are prompts, not code. Run them one at a time, each in a fresh chat with no files attached:
 
-1. Run Prompt A on a transcript → save the locked report.
-2. Run Prompt B on the *same* transcript, separately → save the locked report.
-3. Feed both locked reports — never the raw transcript — into Prompt C for the cross-instrument comparison.
+1. Run Prompt A in a fresh chat on the platform whose conversations you want to assess. The judge searches that account's chat history itself; if chat history search isn't available there, it aborts by design - pasting a transcript is not a substitute. Save the locked report.
+2. Run Prompt B the same way, in a separate fresh chat → save the locked report.
+3. Feed both locked reports - never raw conversations - into Prompt C for the cross-instrument comparison.
 4. Once Reflect blocks have accumulated across several runs, feed only those into Prompt D for the next version's change list.
 
 Run all four prompts of one assessment series in the **same language track** (all from `/prompts/en/`, all from `/prompts/de/`, or all from `/prompts/pl/`). The three tracks are faithful translations of the same methodology, but the machine-readable Reflect block uses different field names per language, and Prompt D expects the field names of its own track.

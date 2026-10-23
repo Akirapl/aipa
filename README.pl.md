@@ -21,10 +21,10 @@ Oba działają poprzez cztery izolowane prompty sędziowskie, każdy uruchamiany
 
 | Prompt | Rola | Widzi |
 |---|---|---|
-| A — Sędzia Złożoności | Klasyfikuje K1–K5 | Tylko transkrypt, na ślepo |
-| B — Sędzia Korekt | Klasyfikuje E1–E5 | Tylko transkrypt, na ślepo, niezależnie od A |
-| C — Komparator | Porównuje raporty między przebiegami i instrumentami | Wyłącznie zablokowane raporty sędziów — nigdy dane Reflect |
-| D — Maintainer | Proponuje kolejną wersję | Wyłącznie zgromadzone bloki Reflect — nigdy faktyczne wyniki |
+| A — Sędzia Złożoności | Klasyfikuje K1–K5 | Historia czatów konta, przez wyszukiwanie - bez załączników, na ślepo |
+| B — Sędzia Korekt | Klasyfikuje E1–E5 | Historia czatów konta, przez wyszukiwanie - bez załączników, na ślepo, niezależnie od A |
+| C — Komparator | Porównuje raporty między przebiegami i instrumentami | Wyłącznie zablokowane raporty sędziów - ich bloki Reflect są ignorowane |
+| D — Maintainer | Proponuje kolejną wersję | Wyłącznie zgromadzone bloki Reflect (opcjonalnie aktualne treści promptów) - nigdy faktyczne wyniki |
 
 Wewnątrz każdego sędziego fazy przebiegają ściśle po kolei i blokują się, zanim rozpocznie się kolejna: deklaracja kontaminacji, zbieranie dowodów (minimalne pokrycie domen jest wymuszone, nie opcjonalne), klasyfikacja (następnie zamrożona), walidacja i samokrytyka oraz czytelny maszynowo blok Reflect, który zasila Maintainera.
 
@@ -54,7 +54,7 @@ Aktywny, obecnie **v0.4**. AIPA-K i AIPA-E wersjonują się niezależnie. Kilka 
 /prompts/en/   Prompty A–D, angielski (kanoniczny)
 /prompts/de/   Prompty A–D, niemiecki (oryginał)
 /prompts/pl/   Prompty A–D, polski
-/examples/     Zanonimizowane przykładowe raporty sędziów i pełny przebieg
+/examples/     Zarezerwowane na zanonimizowane przykładowe przebiegi (jeszcze brak)
 README.md      Wersja angielska
 README.de.md   Wersja niemiecka
 README.pl.md   Ten plik (polski)
@@ -63,11 +63,11 @@ LICENSE
 
 ## Jak z tego korzystać
 
-Sędziowie to prompty, nie kod. Uruchamiaj je pojedynczo, w czystej sesji bez załączonego wcześniejszego kontekstu:
+Sędziowie to prompty, nie kod. Uruchamiaj je pojedynczo, każdy w świeżym czacie bez załączonych plików:
 
-1. Uruchom Prompt A na transkrypcie → zapisz zablokowany raport.
-2. Uruchom Prompt B na *tym samym* transkrypcie, osobno → zapisz zablokowany raport.
-3. Podaj oba zablokowane raporty — nigdy surowy transkrypt — do Promptu C w celu porównania międzyinstrumentowego.
+1. Uruchom Prompt A w świeżym czacie na platformie, której rozmowy chcesz ocenić. Sędzia sam przeszukuje historię czatów tego konta; jeśli wyszukiwanie w historii nie jest tam dostępne, celowo przerywa pracę - wklejony transkrypt go nie zastąpi. Zapisz zablokowany raport.
+2. Uruchom Prompt B w ten sam sposób, w osobnym świeżym czacie → zapisz zablokowany raport.
+3. Podaj oba zablokowane raporty - nigdy surowe rozmowy - do Promptu C w celu porównania międzyinstrumentowego.
 4. Gdy bloki Reflect zgromadzą się z kilku przebiegów, podaj wyłącznie je do Promptu D, aby uzyskać listę zmian dla kolejnej wersji.
 
 Uruchamiaj wszystkie cztery prompty jednej serii oceny w **tym samym torze językowym** (wszystkie z `/prompts/pl/`, wszystkie z `/prompts/en/` lub wszystkie z `/prompts/de/`). Trzy tory to wierne tłumaczenia tej samej metodyki, ale czytelny maszynowo blok Reflect używa innych nazw pól w każdym języku, a Prompt D oczekuje nazw pól właściwych dla swojego toru.
